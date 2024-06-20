@@ -11,7 +11,7 @@ const Home = () => {
     <div className="max-w-md">
       <h1 className="mb-5 text-5xl font-bold">You got the travel plans, we got the travel vans.</h1>
       <p className="mb-5">Add adventure to your life by joining the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
-      <Link className="btn btn-primary">Find your van</Link>
+      <Link to="/vans" className="btn btn-primary">Find your van</Link>
     </div>
   </div>
 </div>
