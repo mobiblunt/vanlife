@@ -1,19 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav className="navbar  mb-4">
-  <Link to='/' className="flex-1">
+  <NavLink to='/' className="flex-1">
     <a className="btn btn-ghost text-2xl">#VanLife</a>
-  </Link>
+  </NavLink>
   <div className="flex-none">
-  <Link to='/about' className="flex-1">
+  <NavLink to='/about' className={`flex-1 ${({isActive}) => isActive ? "bg-green-300" : null }`}>
     <a className="btn btn-ghost text-lg">About</a>
-  </Link>
-  <Link to='/vans' className="flex-1">
+  </NavLink>
+  <NavLink to='/host' className={`flex-1 ${({isActive}) => isActive ? "bg-green-300" : null }`}>
+    <a className="btn btn-ghost text-lg">Host</a>
+  </NavLink>
+  <NavLink to='/vans' className={`flex-1 ${({isActive}) => isActive ? "bg-green-300" : null }`}>
     <a className="btn btn-ghost text-lg">Vans</a>
-  </Link>
+  </NavLink>
   </div>
 </nav>
   )
