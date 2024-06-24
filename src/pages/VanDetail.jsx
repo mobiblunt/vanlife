@@ -1,8 +1,9 @@
 import React from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, Link , useLocation  } from "react-router-dom"
 
 const VanDetail = () => {
     const params = useParams()
+    const location = useLocation()
     const [van, setVan] = React.useState(null)
 
     React.useEffect(() => {
@@ -11,9 +12,18 @@ const VanDetail = () => {
             .then(data => setVan(data.vans))
     }, [params.id])
 
+    const search = location.state?.search || ""
+    const type = location.state?.type || "all"
+
   return (
     <div className='flex justify-center'>
+      
         {van ? (<div className="card w-100 glass">
+        <Link
+                to={`..${search}`}
+                relative="path"
+                className="back-button"
+            >&larr; <span>Back to {type} vans</span></Link>
   <figure><img src={van.imageUrl} alt="car!"/></figure>
   <div className="card-body">
   <div className={`badge badge-outline badge-${van.type === "luxury" ? "secondary" : (van.type === "rugged" ? "accent" : "primary" )}`}>{van.type}</div>

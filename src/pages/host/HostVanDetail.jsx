@@ -63,7 +63,7 @@ const HostVanDetail = () => {
                 
 
             </nav>
-            <Outlet />
+            <Outlet context={[currentVan]} />
     </div>
 
     
