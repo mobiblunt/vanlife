@@ -8,8 +8,8 @@ const Navbar = () => {
     <a className="btn btn-ghost text-2xl">#VanLife</a>
   </NavLink>
   <div className="flex-none">
-  <NavLink to='/about' className={`flex-1 ${({isActive}) => isActive ? "bg-green-300" : null }`}>
-    <a className="btn btn-ghost text-lg">About</a>
+  <NavLink to='/about' className={`btn btn-ghost text-lg flex-1`} isActive={(match) => match !== null ? "bg-green-300" : null}>
+    About
   </NavLink>
   <NavLink to='/host' className={`flex-1 ${({isActive}) => isActive ? "bg-green-300" : null }`}>
     <a className="btn btn-ghost text-lg">Host</a>
